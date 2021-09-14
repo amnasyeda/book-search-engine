@@ -5,10 +5,15 @@ import Auth from '../utils/auth';
 import { getMe, deleteBook } from '../utils/API';
 
 import { removeBookId } from '../utils/localStorage';
-import {useQuery, useMutation } from '@apollo/client';
+import {useMutation, useQuery} from '@apollo/react-hooks';
 import { GET_ME } from '../utils/queries';
+import { REMOVE_BOOK } from '../utils/mutations';;
 
 const SavedBooks = () => {
+
+  const { loading, data} = useQuery(GET_ME);
+  const [removeBook, {err}] = useMutation(REMOVE_BOOK);
+
   const [userData, setUserData] = useState({});
 
   // use this to determine if `useEffect()` hook needs to run again
