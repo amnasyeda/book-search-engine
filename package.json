@@ -10,9 +10,17 @@
     "build": "cd client && npm run build"
   },
   "keywords": [],
-  "author": "",
+  "author": "Amna Syeda",
   "license": "ISC",
   "devDependencies": {
-    "concurrently": "^5.1.0"
-  }
+    "concurrently": "^5.3.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amnasyeda/book-search-engine.git"
+  },
+  "bugs": {
+    "url": "https://github.com/amnasyeda/book-search-engine/issues"
+  },
+  "homepage": "https://github.com/amnasyeda/book-search-engine#readme"
 }
