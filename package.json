@@ -8,12 +8,15 @@
     "develop": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
     "install": "cd server && npm i && cd ../client && npm i",
     "build": "cd client && npm run build",
-    "heroku-postbuild": "cd client && npm run build" 
+    "heroku-postbuild": "cd client && npm run build"
   },
   "keywords": [],
   "author": "Amna Syeda",
   "license": "ISC",
   "devDependencies": {
-    "concurrently":  "^6.2.1"
+    "concurrently": "^6.2.1"
+  },
+  "dependencies": {
+    "@apollo/client": "^3.4.11"
   }
 }
