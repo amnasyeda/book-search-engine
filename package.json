@@ -1,7 +1,7 @@
 {
-  "name": "googlebooks-app",
+  "name": "book-search-engine",
   "version": "1.0.0",
-  "description": "",
+  "description": "App that allows you to search for books using Google APIs",
   "main": "server/server.js",
   "scripts": {
     "start": "node server/server.js",
