@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Jumbotron, Container, CardColumns, Card, Button } from 'react-bootstrap';
 
+import { getMe, removeBook } from '../utils/API';
 import Auth from '../utils/auth';
-//import { getMe, deleteBook } from '../utils/API';
 import { removeBookId } from '../utils/localStorage';
 
 import {useMutation, useQuery} from '@apollo/react-hooks';
@@ -24,9 +24,15 @@ const SavedBooks = () => {
     }
 
     try {
-      await removeBook({
-        variables: { bookId },
+      const {data} = await removeBook({
+        variables: { bookId }
       });
+    
+      removeBookId(bookId);
+    } catch (err) {
+      console.error(err);
+    }
+  };
 
       /*
       if (!response.ok) {
@@ -37,13 +43,6 @@ const SavedBooks = () => {
       setUserData(updatedUser);
       */
 
-      // upon success, remove book's id from localStorage
-      removeBookId(bookId);
-      window.location.reload();
-    } catch (err) {
-      console.error(err);
-    }
-  };
 
   // if data isn't here yet, say so
   if (loading) {
